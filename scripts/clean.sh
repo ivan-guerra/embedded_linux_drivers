@@ -13,8 +13,7 @@ then
     rm -r $ELD_BIN_DIR
 fi
 
-# TODO: Reinstate when there modules to build in this project.
 # Remove module build artefacts.
-# pushd $ELD_MODULE_SRC_PATH
-#     make clean
-# popd
+pushd $ELD_MODULE_SRC_PATH
+    make clean
+popd

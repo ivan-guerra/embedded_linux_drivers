@@ -40,13 +40,12 @@ Main()
         BuildKernel
     fi
 
-    # TODO: Reinstate when there modules to build in this project.
-    # read -p "Build modules (assumes existing kernel build)? [y/n] " -n 1 -r
-    # echo
-    # if [[ $REPLY =~ ^[Yy]$ ]]
-    # then
-    #     BuildModules
-    # fi
+    read -p "Build modules (assumes existing kernel build)? [y/n] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        BuildModules
+    fi
 }
 
 Main
