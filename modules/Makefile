@@ -1,4 +1,4 @@
-SUBDIRS = hello
+SUBDIRS = chapter_3
 
 all: subdirs
 
