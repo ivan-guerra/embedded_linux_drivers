@@ -3,13 +3,14 @@ bin
 
 # Ignore module build artefacts. Note, these items can be automatically cleaned
 # by running scripts/clean.sh or running 'make clean' in the modules directory.
-modules/*/.*.cmd
-modules/*/*.dwo
-modules/*/*.ko
-modules/*/*.o
-modules/*/*.mod*
-modules/*/modules.order
-modules/*/Module.symvers
+*.cmd
+*.dwo
+*.ko
+*.o
+*.mod.c
+modules.order
+Module.symvers
+.tmp_versions
 
 # Ignore the cscope/ctags index files.
 cscope.*
