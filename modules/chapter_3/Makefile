@@ -15,11 +15,15 @@ modules:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
 
 clean:
-	find . \! -name 'Makefile' \! -name 'helloworld_bbb.c' -delete
+	find . \
+	\! -name 'Makefile' \
+	\! -name 'helloworld_bbb.c' \
+	\! -name 'helloworld_bbb_with_parameters.c' \
+	-delete
 
 .PHONY: modules clean
 
 else
 	# This bit executes when make gets called from the kernel build system.
-    obj-m := helloworld_bbb.o
+    obj-m := helloworld_bbb.o helloworld_bbb_with_parameters.o
 endif
