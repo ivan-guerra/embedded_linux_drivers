@@ -19,11 +19,13 @@ clean:
 	\! -name 'Makefile' \
 	\! -name 'helloworld_bbb.c' \
 	\! -name 'helloworld_bbb_with_parameters.c' \
+	\! -name 'helloworld_bbb_with_timing.c' \
 	-delete
 
 .PHONY: modules clean
 
 else
 	# This bit executes when make gets called from the kernel build system.
-    obj-m := helloworld_bbb.o helloworld_bbb_with_parameters.o
+    obj-m := helloworld_bbb.o helloworld_bbb_with_parameters.o \
+	         helloworld_bbb_with_timing.o
 endif
