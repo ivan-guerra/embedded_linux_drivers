@@ -1,4 +1,4 @@
-SUBDIRS = chapter_3
+SUBDIRS = chapter_3 chapter_4
 
 all: subdirs
 
