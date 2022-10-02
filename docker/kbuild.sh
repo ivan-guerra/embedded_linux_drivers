@@ -6,7 +6,7 @@
 ConfigKernel()
 {
     pushd $KERNEL_SRC_DIR
-        make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- \
+        make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- \
              O=$KERNEL_OBJ_DIR bb.org_defconfig
     popd
 }
@@ -14,7 +14,7 @@ ConfigKernel()
 BuildKernel()
 {
     pushd $KERNEL_SRC_DIR
-        make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- \
+        make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- \
              KERNEL_IMAGETYPE=bzImage O=$KERNEL_OBJ_DIR -j$(nproc)
     popd
 }
@@ -22,7 +22,7 @@ BuildKernel()
 BuildModules()
 {
     pushd $MODULE_SRC_DIR
-        make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- O=$KERNEL_OBJ_DIR all
+        make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- O=$KERNEL_OBJ_DIR all
     popd
 }
 

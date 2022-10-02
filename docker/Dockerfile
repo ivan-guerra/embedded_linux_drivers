@@ -4,21 +4,21 @@
 
 FROM debian:10.8-slim
 
-RUN apt-get update     &&     \
-    apt-get install -y        \
-        bc                    \
-        bison                 \
-        build-essential       \
-        ccache                \
-        cpio                  \
-        curl                  \
-        flex                  \
-        gcc-arm-linux-gnueabi \
-        libelf-dev            \
-        libncurses-dev        \
-        libssl-dev            \
-        lzop                  \
-        u-boot-tools          \
+RUN apt-get update     &&       \
+    apt-get install -y          \
+        bc                      \
+        bison                   \
+        build-essential         \
+        ccache                  \
+        cpio                    \
+        curl                    \
+        flex                    \
+        gcc-arm-linux-gnueabihf \
+        libelf-dev              \
+        libncurses-dev          \
+        libssl-dev              \
+        lzop                    \
+        u-boot-tools            \
         vim-tiny
 
 # Use ccache (make it appear in path earlier than /usr/bin/gcc, etc.).
