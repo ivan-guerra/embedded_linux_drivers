@@ -25,8 +25,9 @@ if [ "$#" -ne 3 ]; then
 fi
 
 # rsync *.ko files in the ELD_MODULE_SRC_PATH dir to the Beaglebone Black.
-pushd $ELD_MODULE_SRC_PATH > /dev/null
+pushd $ELD_PROJECT_PATH > /dev/null
     # See https://unix.stackexchange.com/questions/87018/find-and-rsync
     # for an explanation of this command.
-    rsync -avR --files-from=<(find . -name "*.ko") ./ $1@$2:$3
+    rsync -avR --files-from=<(find modules -name "*.ko") ./ $1@$2:$3
+    rsync -avR --files-from=<(find apps -executable -type f) ./ $1@$2:$3
 popd > /dev/null

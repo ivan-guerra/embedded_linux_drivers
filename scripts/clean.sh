@@ -17,3 +17,8 @@ fi
 pushd $ELD_MODULE_SRC_PATH
     make clean
 popd
+
+# Remove app build artefacts.
+pushd $ELD_APP_SRC_PATH
+    make clean
+popd

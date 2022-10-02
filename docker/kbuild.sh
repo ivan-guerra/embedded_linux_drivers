@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# kbuild.sh runs the series of command needed to configure and build the kernel
-# and any custom drivers in MODULE_SRC_DIR.
+# kbuild.sh runs the series of commands needed to configure and build the
+# kernel, custom kernel modules, and custom C apps.
 
 ConfigKernel()
 {
@@ -26,6 +26,13 @@ BuildModules()
     popd
 }
 
+BuildApps()
+{
+    pushd $APP_SRC_DIR
+        make CC=arm-linux-gnueabihf-gcc -j$(nproc) all
+    popd
+}
+
 Main()
 {
     read -p "Build kernel? [y/n] " -n 1 -r
@@ -45,6 +52,13 @@ Main()
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         BuildModules
+    fi
+
+    read -p "Build apps? [y/n] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        BuildApps
     fi
 }
 

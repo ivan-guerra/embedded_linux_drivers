@@ -26,5 +26,8 @@ ELD_KERNEL_SRC_PATH="${ELD_PROJECT_PATH}/linux"
 # Driver module source path.
 ELD_MODULE_SRC_PATH="${ELD_PROJECT_PATH}/modules"
 
+# Driver test app(s) source path.
+ELD_APP_SRC_PATH="${ELD_PROJECT_PATH}/apps"
+
 # ccache path. Allows for re-use of the cache between container builds.
 ELD_CCACHE_PATH="${ELD_BIN_DIR}/ccache"
