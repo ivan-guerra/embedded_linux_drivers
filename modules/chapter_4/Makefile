@@ -18,11 +18,12 @@ clean:
 	find . \
 	\! -name 'Makefile' \
 	\! -name 'helloworld_bbb_char_driver.c' \
+	\! -name 'helloworld_bbb_class_driver.c' \
 	-delete
 
 .PHONY: modules clean
 
 else
 	# This bit executes when make gets called from the kernel build system.
-    obj-m := helloworld_bbb_char_driver.o
+    obj-m := helloworld_bbb_char_driver.o helloworld_bbb_class_driver.o
 endif
