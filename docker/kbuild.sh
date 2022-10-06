@@ -15,7 +15,7 @@ BuildKernel()
 {
     pushd $KERNEL_SRC_DIR
         make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- \
-             KERNEL_IMAGETYPE=bzImage O=$KERNEL_OBJ_DIR -j$(nproc)
+             LOADADDR=0x80008000 O=$KERNEL_OBJ_DIR uImage dtbs -j$(nproc)
     popd
 }
 
